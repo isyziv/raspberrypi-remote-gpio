@@ -9,8 +9,8 @@ factory = PiGPIOFactory(host=jdata['ip'])
 ontime=0.05
 offtime=0.05
 #################################################
+print("connect success")
 led = LED(17, pin_factory=factory)
-
 while True:
     led.on()
     sleep(ontime)
