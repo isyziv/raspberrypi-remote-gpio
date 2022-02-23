@@ -6,11 +6,13 @@ with open('setting.json','r',encoding='utf8')as jfile:
     jdata=json.load(jfile)
 #################################################
 factory = PiGPIOFactory(host=jdata['ip'])
+ontime=0.05
+offtime=0.05
 #################################################
 led = LED(17, pin_factory=factory)
 
 while True:
     led.on()
-    sleep(0.05)
+    sleep(ontime)
     led.off()
-    sleep(0.05)
+    sleep(offtime)
